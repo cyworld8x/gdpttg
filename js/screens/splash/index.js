@@ -29,7 +29,7 @@ class SplashScreen extends Component {
 		};
 		this.loadingServerSettings = this.loadingServerSettings.bind(this);
 	}
-	componentDidMount() {
+	componentWillMount() {
 		try {
 			let notificationId = 9999;
 			PushNotification.cancelLocalNotifications({ id: notificationId });
