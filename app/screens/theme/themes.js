@@ -16,6 +16,9 @@ import {KittenTheme} from '../../config/theme';
 import {GradientButton} from '../../components/gradientButton';
 import {scale, scaleModerate, scaleVertical} from '../../utils/scale';
 
+import {DefaultRoutes} from '../../config/navigation/routes';
+
+import {NavigationActions} from 'react-navigation';
 export class Themes extends React.Component {
   static navigationOptions = {
     title: 'Theme'.toUpperCase()
@@ -23,8 +26,18 @@ export class Themes extends React.Component {
 
   constructor(props) {
     super(props);
+    this._navigateAction = this._navigate.bind(this);
   }
 
+  _navigate(route) {
+    let resetAction = NavigationActions.reset({
+      index: 0,
+      actions: [
+        NavigationActions.navigate({routeName: route.id})
+      ]
+    });
+    this.props.navigation.dispatch(resetAction)
+  }
   render() {
     return (
       <View style={styles.root}>
@@ -37,6 +50,7 @@ export class Themes extends React.Component {
               StatusBar.setBarStyle('dark-content', true);
               Platform.OS == 'android' && StatusBar.setBackgroundColor(KittenTheme.colors.screen.base);
               RkTheme.setTheme(KittenTheme);
+              this._navigateAction(DefaultRoutes);
             }}/>
         </View>
         <View style={styles.container}>
@@ -48,6 +62,7 @@ export class Themes extends React.Component {
               RkTheme.setTheme(DarkKittenTheme);
               StatusBar.setBarStyle('light-content', true);
               Platform.OS == 'android' && StatusBar.setBackgroundColor(DarkKittenTheme.colors.screen.base);
+              this._navigateAction(DefaultRoutes);
             }}/>
 
         </View>

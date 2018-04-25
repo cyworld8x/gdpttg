@@ -1,5 +1,8 @@
 import { AppRegistry } from 'react-native';
 import React from 'react';
+
+import StoreManagement from "./api/storageManagement";
+import { Provider } from 'react-redux';
 import {
   DrawerNavigator,
   StackNavigator
@@ -7,11 +10,13 @@ import {
 import {withRkTheme} from 'react-native-ui-kitten';
 import {AppRoutes,NavigationRoutes,CategoryRoutes} from './config/navigation/routesBuilder';
 import * as Screens from './screens';
+
+import SplashScreen from './screens/other/splash';
+import CategoryPage from './screens/category/CategoryPage';
 import {bootstrap} from './config/bootstrap';
 //import track from './config/analytics';
 import {data} from './data'
 import {View} from "react-native";
-
 bootstrap();
 data.populateData();
 
@@ -29,8 +34,11 @@ function getCurrentRouteName(navigationState) {
 let SideMenu = withRkTheme(Screens.SideMenu);
 const KittenApp = StackNavigator({
   First: {
-    screen: Screens.SplashScreen
+    screen: SplashScreen
   },
+  // Home: {
+  //   screen: CategoryPage
+  // },
   Home: {
     screen: DrawerNavigator({
         ...AppRoutes,
@@ -39,6 +47,7 @@ const KittenApp = StackNavigator({
         drawerOpenRoute: 'DrawerOpen',
         drawerCloseRoute: 'DrawerClose',
         drawerToggleRoute: 'DrawerToggle',
+        drawerBackgroundColor: "transparent",
         contentComponent: (props) => <SideMenu {...props}/>
       })
   }
@@ -47,9 +56,15 @@ const KittenApp = StackNavigator({
 });
 
 export default class App extends React.Component {
-  state = {
-    loaded: false
-  };
+
+  constructor() {
+    super();
+    this.state = {
+      loaded: false
+    };
+    
+  }
+ 
 
   componentWillMount() {
     this._loadAssets();
@@ -74,18 +89,20 @@ export default class App extends React.Component {
     // }
 
     return (
-      <View style={{flex: 1}}>
-        <KittenApp
-          onNavigationStateChange={(prevState, currentState) => {
-            const currentScreen = getCurrentRouteName(currentState);
-            const prevScreen = getCurrentRouteName(prevState);
+      <Provider store={StoreManagement}>
+        <View style={{flex: 1}}>
+          <KittenApp
+            onNavigationStateChange={(prevState, currentState) => {
+              const currentScreen = getCurrentRouteName(currentState);
+              const prevScreen = getCurrentRouteName(prevState);
 
-            if (prevScreen !== currentScreen) {
-              //track(currentScreen);
-            }
-          }}
-        />
-      </View>
+              if (prevScreen !== currentScreen) {
+                //track(currentScreen);
+              }
+            }}
+          />
+        </View>
+      </Provider>
     );
   }
 }

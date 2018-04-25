@@ -2,6 +2,30 @@ import {FontIcons} from '../../assets/icons';
 import * as Screens from '../../screens/index';
 import _ from 'lodash';
 
+export const DefaultRoutes = {
+  id: 'CategoryPage',
+    title: 'Category',
+    icon: FontIcons.other,
+    screen: Screens.CategoryPage,
+    children: []
+}
+
+export const SmallMainRoutes = [
+  {
+    id: 'TermConditionPage',
+    title: 'Điều khoản',
+    icon: FontIcons.mobile,
+    screen: Screens.TermConditionPage
+   
+  },
+  {
+    id: 'Themes',
+    title: 'Themes',
+    icon: FontIcons.theme,
+    screen: Screens.Themes,
+    children: []
+  },
+]
 export const MainRoutes = [
   {
     id: 'LoginMenu',
@@ -256,13 +280,40 @@ export const MainRoutes = [
     screen: Screens.Themes,
     children: []
   },
+  {
+    id: 'CategoryPage',
+    title: 'Category',
+    icon: FontIcons.other,
+    screen: Screens.CategoryPage,
+    children: [
+      {
+        id: 'NewsPage',
+        title: 'News',
+        screen: Screens.NewsPage,
+        children: []
+      },
+      {
+        id: 'DetailPage',
+        title: 'DetailPage',
+        screen: Screens.DetailPage,
+        children: []
+      },
+      {
+        id: 'TermConditionPage',
+        title: 'CÀI ĐẶT',
+        screen: Screens.TermConditionPage,
+        children: []
+      }
+      
+    ]
+  },
 ];
 
 let menuRoutes = _.cloneDeep(MainRoutes);
 menuRoutes.unshift({
-  id: 'GridV1',
+  id: 'CategoryPage',
   title: 'Start',
-  screen: Screens.GridV1,
+  screen: Screens.CategoryPage,
   children: []
 },);
 

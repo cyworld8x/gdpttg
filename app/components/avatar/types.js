@@ -42,6 +42,13 @@ export const AvatarTypes = (theme) => {
         borderRadius:16
       }
     },
+    medium: {
+      image: {
+        width: 64,
+        height: 64,
+        borderRadius:32
+      }
+    },
     circle: {
       image: {
         borderRadius: 20

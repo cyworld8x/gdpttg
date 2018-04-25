@@ -10,6 +10,9 @@ export const FontIcons = {
   theme: '',
   card: '',
   addToCardForm: '',
+  eye: '',
+  share: '',
+  copyright:''
 };
 
 export const FontAwesome = {
@@ -27,4 +30,7 @@ export const FontAwesome = {
   bars: String.fromCharCode(61641),
   slashEye: String.fromCharCode(61552),
   github: String.fromCharCode(61595),
+  eye: String.fromCharCode(61550),
+  share:String.fromCharCode(61921),
+  copyright:String.fromCharCode(61945),
 };

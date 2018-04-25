@@ -61,8 +61,8 @@ const Colors = {
   followersFourth: '#42a5f5',
 
   chartsAreaStroke:'#097fe5',
-  chartsAreaFill: '#d6ecff'
-
+  chartsAreaFill: '#d6ecff',  
+  fontColorHtml:'#c2c2c2'
 };
 
 const Fonts = {
@@ -77,6 +77,7 @@ const FontBaseValue = scale(18);
 export const KittenTheme = {
   name: 'light',
   colors: {
+    fontcolorhtml: '#c2c2c2',
     accent: Colors.accent,
     primary: Colors.primary,
     disabled: Colors.disabled,

@@ -8,7 +8,7 @@ import {
   RkComponent
 } from 'react-native-ui-kitten';
 import {FontAwesome} from '../../assets/icons';
-
+import Share, {ShareSheet} from 'react-native-share';
 export class SocialBar extends RkComponent {
   componentName = 'SocialBar';
   typeMapping = {
@@ -51,12 +51,20 @@ export class SocialBar extends RkComponent {
       else
         this.setState({comments: this.comments});
     };
-
+    let shareOptions = {
+      title: "GĐPT NEWS",
+      message: "Chia sẻ một bài viết từ ứng dụng GĐPT",
+      url: "http://GDPTthegioi.net/",
+      subject: "Chia sẻ qua" //  for email
+    };
     let updateShares = () => {
-      if (this.state.shares === this.shares)
-        this.setState({shares: this.state.shares + 1});
-      else
-        this.setState({shares: this.shares});
+      shareOptions = this.props.shareOptions!=null ?this.props.shareOptions : shareOptions;
+      Share.open(shareOptions);
+      // if (this.state.shares === this.shares)
+      //   this.setState({shares: this.state.shares + 1});
+      // else
+      //   this.setState({shares: this.shares});
+
     };
 
 
@@ -65,19 +73,19 @@ export class SocialBar extends RkComponent {
         <View style={section}>
           <RkButton rkType='clear' onPress={updateLikes}>
             <RkText rkType='awesome primary' style={icon}>{FontAwesome.heart}</RkText>
-            <RkText rkType='primary primary4' style={label}>{likes}</RkText>
+            {/* <RkText rkType='primary primary4' style={label}>{likes}</RkText> */}
           </RkButton>
         </View>
         <View style={section}>
           <RkButton rkType='clear' onPress={updateComments}>
-            <RkText rkType='awesome hintColor' style={icon}>{FontAwesome.comment}</RkText>
+            <RkText rkType='awesome hintColor' style={icon}>{FontAwesome.eye}</RkText>
             <RkText rkType='primary4 hintColor' style={label}>{comments}</RkText>
           </RkButton>
         </View>
         <View style={section}>
           <RkButton rkType='clear' onPress={updateShares}>
-            <RkText rkType='awesome hintColor' style={icon}>{FontAwesome.user}</RkText>
-            <RkText rkType='primary4 hintColor' style={label}>{shares}</RkText>
+            <RkText rkType='awesome hintColor' style={icon}>{FontAwesome.share}</RkText>
+            <RkText rkType='primary4 hintColor' style={label}>{'Chia sẻ'}</RkText>
           </RkButton>
         </View>
       </View>

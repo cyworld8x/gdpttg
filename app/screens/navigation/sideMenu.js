@@ -13,7 +13,7 @@ import {
   RkText,
   RkTheme
 } from 'react-native-ui-kitten';
-import {MainRoutes} from '../../config/navigation/routes';
+import {MainRoutes,SmallMainRoutes,DefaultRoutes} from '../../config/navigation/routes';
 import {FontAwesome} from '../../assets/icons';
 
 export class SideMenu extends React.Component {
@@ -35,13 +35,13 @@ export class SideMenu extends React.Component {
 
   _renderIcon() {
     if (RkTheme.current.name === 'light')
-      return <Image style={styles.icon} source={require('../../assets/images/smallLogo.png')}/>;
-    return <Image style={styles.icon} source={require('../../assets/images/smallLogoDark.png')}/>
+      return <Image style={styles.icon} source={require('../../../app/assets/images/logo@x2.png')}/>;
+    return <Image style={styles.icon} source={require('../../../app/assets/images/logo@x2.png')}/>
 
   }
 
   render() {
-    let menu = MainRoutes.map((route, index) => {
+    let menu = SmallMainRoutes.map((route, index) => {
       return (
         <TouchableHighlight
           style={styles.container}
@@ -52,7 +52,7 @@ export class SideMenu extends React.Component {
           <View style={styles.content}>
             <View style={styles.content}>
               <RkText style={styles.icon}
-                      rkType='moon primary xlarge'>{route.icon}</RkText>
+                      rkType='moon primary'>{route.icon}</RkText>
               <RkText>{route.title}</RkText>
             </View>
             <RkText rkType='awesome secondaryColor small'>{FontAwesome.chevronRight}</RkText>
@@ -65,10 +65,12 @@ export class SideMenu extends React.Component {
       <View style={styles.root}>
         <ScrollView
           showsVerticalScrollIndicator={false}>
+          <TouchableHighlight onPress={() => this._navigateAction(DefaultRoutes)}>
           <View style={[styles.container, styles.content]}>
             {this._renderIcon()}
-            <RkText rkType='logo'>UI Kitten</RkText>
+            <RkText rkType='logo'>GĐPT</RkText>
           </View>
+          </TouchableHighlight>          
           {menu}
         </ScrollView>
       </View>
@@ -81,7 +83,7 @@ let styles = RkStyleSheet.create(theme => ({
     height: 80,
     paddingHorizontal: 16,
     borderTopWidth: StyleSheet.hairlineWidth,
-    borderColor: theme.colors.border.base
+    borderColor:  theme.colors.border.base
   },
   root: {
     paddingTop: Platform.OS === 'ios' ? 20 : 0,
@@ -94,5 +96,8 @@ let styles = RkStyleSheet.create(theme => ({
   },
   icon: {
     marginRight: 13,
+    width:40,
+    height:40,
+    borderRadius: 20,
   }
 }));

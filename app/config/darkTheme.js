@@ -58,8 +58,8 @@ const Colors = {
   followersFourth: '#09103f',
 
   chartsAreaStroke:'#2942ff',
-  chartsAreaFill: '#0d1238'
-
+  chartsAreaFill: '#0d1238',
+  fontColorHtml:'#ffffff'
 };
 
 const Fonts = {
@@ -74,6 +74,7 @@ const FontBaseValue = 18;
 export const DarkKittenTheme = {
   name: 'dark',
   colors: {
+    fontcolorhtml: '#ffffff',
     accent: Colors.accent,
     primary: Colors.primary,
     disabled: Colors.disabled,

@@ -10,6 +10,7 @@ import {
 } from 'react-native-ui-kitten';
 import {FontAwesome} from '../../assets/icons';
 
+const nothumbnail = require('../../assets/images/kittenImage.png');
 export class Avatar extends RkComponent {
   componentName = 'Avatar';
   typeMapping = {
@@ -25,9 +26,10 @@ export class Avatar extends RkComponent {
 
   renderImg(styles) {
     let {image, badge, badgeText} = styles;
+
     return (
       <View>
-        <Image style={image} source={this.props.img}/>
+        <Image style={image} source={this.props.img} />
         { this.props.badge && this.renderBadge(badge, badgeText)}
       </View>
     )
