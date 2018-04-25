@@ -74,7 +74,7 @@ const FontBaseValue = 18;
 export const DarkKittenTheme = {
   name: 'dark',
   colors: {
-    fontcolorhtml: '#ffffff',
+    fontcolorhtml: Colors.fontColorHtml,
     accent: Colors.accent,
     primary: Colors.primary,
     disabled: Colors.disabled,

@@ -62,7 +62,7 @@ const Colors = {
 
   chartsAreaStroke:'#097fe5',
   chartsAreaFill: '#d6ecff',  
-  fontColorHtml:'#c2c2c2'
+  fontColorHtml:'#707070'
 };
 
 const Fonts = {
@@ -77,7 +77,7 @@ const FontBaseValue = scale(18);
 export const KittenTheme = {
   name: 'light',
   colors: {
-    fontcolorhtml: '#c2c2c2',
+    fontcolorhtml: Colors.fontColorHtml,
     accent: Colors.accent,
     primary: Colors.primary,
     disabled: Colors.disabled,
