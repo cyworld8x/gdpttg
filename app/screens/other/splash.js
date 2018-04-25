@@ -146,7 +146,7 @@ class SplashScreen extends React.Component {
 		this.loadingServerSettings();
 
     StatusBar.setHidden(true, 'none');
-    RkTheme.setTheme(DarkKittenTheme);
+    RkTheme.setTheme(KittenTheme);
 
     this.timer = setInterval(() => {
       if (this.state.progress == 1 && this.state.isLoadingDataStorage == false) {
