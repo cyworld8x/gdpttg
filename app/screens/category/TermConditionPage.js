@@ -49,7 +49,7 @@ const html = `
     <p>&nbsp;</p>
     <h1>9. Liên Lạc Với Chúng Tôi</h1>
 
-    <p>- Địa chỉ email <a href="mailto:cyworld8x@gmail.com">cyworld8x@gmail.com</a>;</p>
+    <p>- Địa chỉ email <a href="mailto:bbt.gdptthegioi@gmail.com">bbt.gdptthegioi@gmail.com</a>;</p>
 
     <p>- Địa chỉ website <a href="https://gdptthegioi.net/">https://gdptthegioi.net/</a>;</p>
     <p><strong>Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vụ của chúng tôi.</strong></p>
