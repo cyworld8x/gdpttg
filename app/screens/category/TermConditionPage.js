@@ -38,7 +38,7 @@ const html = `
     <p>Khi sử dụng Ứng Dụng, bạn thừa nhận rằng  chúng tôi có quyền sử dụng những API hệ thống sau để truy cập vào dữ liệu trên  điện thoại của bạn: (1) Khởi động ứng dụng cùng điển thoại, (2) Ghi dữ liệu của Ứng Dụng lên thẻ nhớ, (3)  Truy cập vào Internet từ thiết bị của bạn. Tất cả các truy cập này đều được  chúng tôi thực hiện sau khi có sự đồng ý của bạn, vì vậy bạn cam kết và thừa nhận  rằng, khi bạn đã cấp quyền cho chúng tôi, bạn sẽ không có bất kỳ khiếu nại nào  đối với chúng tôi về việc truy cập này.</p>
     <p>&nbsp;</p>
     <h1>6. Cam Kết Bảo Mật Thông Tin</h1>
-    <p>VNG sử dụng các phương thức truyền tin an toàn https và mã hóa để truyền tải và lưu trữ các dữ liệu cá nhân và giao tiếp của bạn. Chúng tôi cam kết giữ bí mật tất cả thông tin mà bạn cung cấp cho chúng tôi hoặc chúng tôi thu thập từ bạn và không tiết lộ với bất kỳ bên thứ ba nào trừ khi có yêu cầu từ Cơ quan Nhà nước có thẩm quyền.</p>
+    <p>Chúng tôi sử dụng các phương thức truyền tin an toàn https và mã hóa để truyền tải và lưu trữ các dữ liệu cá nhân và giao tiếp của bạn. Chúng tôi cam kết giữ bí mật tất cả thông tin mà bạn cung cấp cho chúng tôi hoặc chúng tôi thu thập từ bạn và không tiết lộ với bất kỳ bên thứ ba nào trừ khi có yêu cầu từ Cơ quan Nhà nước có thẩm quyền.</p>
     <p>&nbsp;</p>
     <h1>7. Phí Và Các Khoản Thu</h1>
     <p>Chúng tôi cam kết không thu bất cứ khoản phí nào từ người dùng cho các dịch vụ cơ bản mà hiện tại chúng tôi đang cung cấp.</p>
